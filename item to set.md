@@ -9,4 +9,6 @@ started
 ##### To implement
 - firebase tools
 - firebase adds
+- fIREBASE ANALITICS
+- .ENV FILE process.env.REACT_APP_FIREBASE_KEY
 - Performance test before and after rollout

@@ -1,7 +1,12 @@
 import React, { useState } from 'react'
 import Header from './Header'
+import { firebaseConfig } from './util'
+import { initializeApp } from "firebase/app";
+// import { getAnalytics } from "firebase/analytics";
+
 
 export default function LandingPage() {
+    const app = initializeApp(firebaseConfig);
 
     const [inputName, setinputName] = useState("")
     const [BirthDate, setBirthDate] = useState("")
