@@ -9,6 +9,9 @@ started
 - useRef implemented
 - fIREBASE ANALITICS
 - firebase tools
+###### 8 Nov
+- updated router-dom v6
+- 
 ###### Breakpoints
 ##### To implement
 - firebase adds

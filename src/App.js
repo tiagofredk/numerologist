@@ -4,6 +4,7 @@ import LandingPageBR from './component/LandingPageBR';
 import LandingPage from './component/LandingPage';
 import Report from './component/Report';
 import ReportBr from './component/ReportBr'
+
 function App() {
   return (
     <HashRouter >
@@ -15,6 +16,7 @@ function App() {
           <Route path="/report/br" element={<ReportBr/>} />
           <Route path="/br" element={<LandingPageBR/>} />
         </Routes>
+        
       </div>
 
     </HashRouter>
