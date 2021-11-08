@@ -1,21 +1,24 @@
-import React, { useState } from 'react'
+import React, { useRef} from 'react'
 import Header from './Header'
+import { firebaseConfig } from './util'
+import { initializeApp } from "firebase/app";
 
 export default function LandingPage() {
+        initializeApp(firebaseConfig);
 
-    const [inputName, setinputName] = useState("")
-    const [BirthDate, setBirthDate] = useState("")
+    const inputName = useRef()
+    const BirthDate = useRef()
 
     let callForMath = (e) => {
         e.preventDefault()
-        if (inputName.trim() !== "") {
-            dom(inputName)
-            data(BirthDate)
-            // setinputName({ inputName: "" })
-            // setBirthDate({ BirthDate: "" })
+        if (inputName.current.value.trim() !== "") {
+            dom(inputName.current.value)
+            data(BirthDate.current.value)
         } else {
             alert("empty field")
         }
+        inputName.current.value=""
+        BirthDate.current.value=""
     }
 
     function dom(name) {
@@ -255,7 +258,7 @@ export default function LandingPage() {
         localStorage.setItem("day", day1);
         localStorage.setItem("origin", year3);
 
-        window.location.href="/report"
+        window.location.href="#/report/"
     }
     
     
@@ -319,6 +322,7 @@ export default function LandingPage() {
         return firstvowelresult;
     }
 
+    console.log("Landing page rendering");
     return (
         
         <div className="landingPageContainer">
@@ -335,11 +339,11 @@ export default function LandingPage() {
                     <form onSubmit={callForMath}>
                         <div>
                             <label>Name</label>
-                            <input className="box" type="text" id="name" placeholder="Name" value={inputName} onChange={(e) => setinputName(e.target.value )} />
+                            <input className="box" type="text" id="name" placeholder="Name" ref={inputName}  />
                         </div>
                         <div>
                             <label>Birth Date</label>
-                            <input className="box" type="date" id="birthdate" value={BirthDate.BirthDate} onChange={(e) => setBirthDate(e.target.value ) } />
+                            <input className="box" type="date" id="birthdate" ref={BirthDate}/>
                         </div>
                         <div>
                             <button type="submit" className="box" id="btn" > Submit</button>

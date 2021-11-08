@@ -1,26 +1,26 @@
-import React, { useState } from 'react'
+import React, { useRef } from 'react'
 import Header from './Header'
 import { firebaseConfig } from './util'
 import { initializeApp } from "firebase/app";
-// import { getAnalytics } from "firebase/analytics";
-
 
 export default function LandingPage() {
-    const app = initializeApp(firebaseConfig);
+    initializeApp(firebaseConfig);
 
-    const [inputName, setinputName] = useState("")
-    const [BirthDate, setBirthDate] = useState("")
+    // const [inputName, setinputName] = useState("")
+    // const [BirthDate, setBirthDate] = useState("")
+    const inputName = useRef()
+    const BirthDate = useRef()
 
     let callForMath = (e) => {
         e.preventDefault()
-        if (inputName.inputName.trim() !== "") {
-            dom(inputName.inputName)
-            data(BirthDate.BirthDate)
-            setinputName({ inputName: "" })
-            setBirthDate({ BirthDate: "" })
+        if (inputName.current.value.trim() !== "") {
+            dom(inputName.current.value)
+            data(BirthDate.current.value)
         } else {
             alert("empty field")
         }
+        inputName.current.value=""
+        BirthDate.current.value=""
     }
 
     function dom(name) {
@@ -32,7 +32,6 @@ export default function LandingPage() {
         data();
         calcconsonant(name1);
         calcvowel(name1);
-        
         firstvowel();
         return splitedname;
     }
@@ -260,6 +259,8 @@ export default function LandingPage() {
         localStorage.setItem("month", month1);
         localStorage.setItem("day", day1);
         localStorage.setItem("origin", year3);
+
+        window.location.href="#/report/br"
     }
     
     
@@ -338,15 +339,15 @@ export default function LandingPage() {
                 <div id="inputuser">
                     <form onSubmit={callForMath}>
                         <div>
-                            <label>Name</label>
-                            <input className="box" type="text" id="name" placeholder="Nome" value={inputName.inputName} onChange={(e) => { setinputName({ inputName: e.target.value }) }} />
+                            <label>Nome</label>
+                            <input className="box" type="text" id="name" placeholder="Name" ref={inputName} />
                         </div>
                         <div>
-                            <label>Birth Date</label>
-                            <input className="box" type="date" id="birthdate" value={BirthDate.BirthDate} onChange={(e) => { setBirthDate({ BirthDate: e.target.value }) }} />
+                            <label>Data De Nascimento</label>
+                            <input className="box" type="date" id="birthdate" ref={BirthDate} />
                         </div>
                         <div>
-                            <button type="submit" className="box" id="btn" onClick={()=> window.location.href="/report/br"}> Submit</button>
+                            <button type="submit" className="box" id="btn" >Submeter</button>
                         </div>
                     </form>
                 </div>

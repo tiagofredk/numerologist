@@ -7,7 +7,7 @@ export default function Header() {
 
     function flagSelector() {
 
-        if (window.location.pathname === "/br") {
+        if (window.location.pathname === "#/br") {
             let logoBR = bra
             return logoBR;
         } else {
@@ -15,7 +15,7 @@ export default function Header() {
             return logoUSA;
         };
     }
-
+    console.log(window.location.pathname)
     return (
         <div className="header">
             <nav>

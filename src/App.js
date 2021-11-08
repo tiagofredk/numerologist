@@ -1,12 +1,12 @@
 import './App.scss'
-import { BrowserRouter as Router, Switch, Route } from 'react-router-dom'
+import { HashRouter, Switch, Route } from 'react-router-dom'
 import LandingPageBR from './component/LandingPageBR';
 import LandingPage from './component/LandingPage';
 import report from './component/report';
 import report_pt from './component/report_pt'
 function App() {
   return (
-    <Router>
+    <HashRouter >
       
       <div className="App">
       <Switch>
@@ -17,7 +17,7 @@ function App() {
       </Switch>
       </div>
 
-    </Router>
+    </HashRouter>
   );
 }
 

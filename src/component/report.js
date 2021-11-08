@@ -1,9 +1,7 @@
 import { meaning } from "./meaning_en";
-
 import React, { useEffect } from 'react'
 import { NavLink } from "react-router-dom";
 import Logo from "../images/Logo.png"
-
 
 export default function Report() {
 
