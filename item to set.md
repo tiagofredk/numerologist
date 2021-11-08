@@ -17,3 +17,6 @@ started
 - landing page link redirection best practice
 - Single report page
 - Manifest ???
+- if statement with window location
+- 404 page
+- 
