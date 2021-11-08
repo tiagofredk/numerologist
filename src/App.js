@@ -1,5 +1,5 @@
 import './App.scss'
-import { HashRouter, Switch, Route } from 'react-router-dom'
+import { HashRouter, Route, Routes } from 'react-router-dom'
 import LandingPageBR from './component/LandingPageBR';
 import LandingPage from './component/LandingPage';
 import report from './component/report';
@@ -9,12 +9,12 @@ function App() {
     <HashRouter >
       
       <div className="App">
-      <Switch>
-        <Route exact path="/" component={LandingPage} />
-        <Route exact path="/report" component={report}/>
-        <Route path="/report/br" component={report_pt}/>
-        <Route path="/br" component={LandingPageBR} />
-      </Switch>
+      <Routes>
+        <Route exact path="/" element={LandingPage} />
+        <Route exact path="/report" element={report}/>
+        <Route path="/report/br" element={report_pt}/>
+        <Route path="/br" element={LandingPageBR} />
+      </Routes>
       </div>
 
     </HashRouter>
