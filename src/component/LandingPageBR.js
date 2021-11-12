@@ -2,9 +2,11 @@ import React, { useRef } from 'react'
 import Header from './Header'
 import { firebaseConfig } from './util'
 import { initializeApp } from "firebase/app";
+import { useNavigate } from 'react-router';
 
 export default function LandingPage() {
     initializeApp(firebaseConfig);
+    const navigate = useNavigate();
 
     // const [inputName, setinputName] = useState("")
     // const [BirthDate, setBirthDate] = useState("")
@@ -260,7 +262,8 @@ export default function LandingPage() {
         localStorage.setItem("day", day1);
         localStorage.setItem("origin", year3);
 
-        window.location.href="#/report/br"
+        // window.location.href="#/report/br"
+        navigate("/report/br")
     }
     
     

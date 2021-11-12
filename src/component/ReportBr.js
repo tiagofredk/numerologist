@@ -12,7 +12,7 @@ export default function Report() {
     return (
         <div className="reportPage">
             <header>
-                <NavLink to="/br"> <img src={Logo} width="32" alt="32" /> </NavLink>
+                <NavLink to="/br"> <img src={Logo} width="62" alt="62" /> </NavLink>
             </header>
 
             <div className="analise">
