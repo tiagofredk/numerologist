@@ -15,8 +15,8 @@ export const firebaseConfig = {
     
     messagingSenderId: process.env.REACT_APP_messagingSenderId,
     
-    appId: "1:261602275042:web:70e3a3fc876dd23360f8bb",
-    // appId: process.env.REACT_APP_appId,
+    // appId: "1:261602275042:web:70e3a3fc876dd23360f8bb",
+    appId: process.env.REACT_APP_appId,
 
     measurementId: process.env.REACT_APP_measurementId
 

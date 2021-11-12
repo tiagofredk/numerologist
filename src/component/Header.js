@@ -1,13 +1,15 @@
 import React from 'react'
 import usa from '../images/usa.png'
 import bra from '../images/brazil-48.png'
-import { NavLink } from 'react-router-dom'
+import { NavLink, useLocation } from 'react-router-dom'
 
 export default function Header() {
+    
+    const location = useLocation();
 
     function flagSelector() {
 
-        if (window.location.pathname === "#/br") {
+        if (location.pathname === "/br") {
             let logoBR = bra
             return logoBR;
         } else {
@@ -15,7 +17,7 @@ export default function Header() {
             return logoUSA;
         };
     }
-    console.log(window.location.pathname)
+    
     return (
         <div className="header">
             <nav>

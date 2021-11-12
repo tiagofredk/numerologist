@@ -9,17 +9,17 @@ started
 - useRef implemented
 - fIREBASE ANALITICS
 - firebase tools
-###### 8 Nov
-- updated router-dom v6
+###### 12 Nov
+- useNavigate and useLocation implemented
+- 404 page not found
+- .ENV FILE process.env.REACT_APP_FIREBASE_KEY
+- firebase adds
+- site description
+- logo favicon
 - 
+
 ###### Breakpoints
 ##### To implement
-- firebase adds
-- .ENV FILE process.env.REACT_APP_FIREBASE_KEY
-- Performance test before and after rollout
-- landing page link redirection best practice
-- Single report page
 - Manifest ???
-- if statement with window location
-- 404 page
-- 
+- Single report page
+- report home link issue
