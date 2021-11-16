@@ -23,3 +23,4 @@ started
 - Manifest ???
 - Single report page
 - report home link issue
+- FAQ

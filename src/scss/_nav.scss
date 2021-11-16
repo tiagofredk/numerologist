@@ -1,0 +1,71 @@
+nav {
+    position: fixed;
+    top: 4%;
+    left: 80%;
+}
+
+.selected-lang {
+    cursor: pointer;
+    display: flex;
+    justify-content: space-between;
+    line-height: 2;
+    width: 130px;
+}
+
+.selected-lang::before {
+    content: "";
+    display: block;
+    width: 32px;
+    height: 32px;
+}
+
+.lang-menu ul {
+    background-color: #fff;
+    margin: 0;
+    padding: 0;
+    border: 1px solid #f8f8f8;
+    border-radius: 5%;
+    box-shadow: 0px 1px 10px rgba(0, 0, 0, 0.2);
+    display: none;
+}
+
+.lang-menu ul li {
+    list-style: none;
+    display: flex;
+    justify-content: space-between;
+    // align-items: center;
+}
+
+.lang-menu ul li a {
+    width: 150px;
+    display: flex;
+    padding: 5px 10px;
+    text-decoration: none;
+    font-size: 1rem;
+}
+
+.lang-menu ul li a:hover {
+    background-color: #f2f2f2;
+}
+
+// .lang-menu ul li a::before {
+//     content: "";
+//     display: inline-block;
+//     width: 32px;
+//     height: 32px;
+//     margin-right: 10px;
+//     vertical-align: middle;
+// }
+.us::before {
+    // background-image: url("/src/images/usa.png");
+    background-size: 32px // ./images/usa.png
+}
+
+.br::before {
+    // background-image: url("/src/images/brazil-48.png");
+    background-size: 32px // ./images/brazil-48.png
+}
+
+.lang-menu:hover ul {
+    display: block;
+}
