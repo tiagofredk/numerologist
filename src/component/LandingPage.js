@@ -373,7 +373,7 @@ export default function LandingPage() {
                             <label className="label__date">{inputdate} </label>
                             <input className="box " type="date" id="birthdate" ref={BirthDate} />
                         </div>
-                        <div>
+                        <div className="box_btn">
                             <button type="submit" className="box" id="btn" >{sendbutton} </button>
                         </div>
                     </form>

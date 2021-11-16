@@ -91,11 +91,10 @@ $radius: 0.5rem;
 //     width: 300px;
 //     height: 25px;
 // }
-.name #btn {
-    width: 100px;
-    justify-content: center;
-}
-
+// .name #btn {
+//     width: 100px;
+//     justify-content: center;
+// }
 .form__input:focus+.form__label .form__name,
 .form__input:valid+.form__label .form__name {
     transform: translateY(-100%);
