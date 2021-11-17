@@ -9,11 +9,13 @@ export default function LandingPage() {
     initializeApp(firebaseConfig);
     const navigate = useNavigate();
 
-    const [title, setTitle] = useState("")
-    const [description, setDescription]=useState("")
-    const [input, setInput]=useState("")
-    const [inputdate, setInputdate]=useState("")
-    const [sendbutton, setSendbutton]=useState("")
+    const [title, setTitle] = useState("");
+    const [description, setDescription] = useState("");
+    const [input, setInput] = useState("");
+    const [inputdate, setInputdate] = useState("");
+    const [sendbutton, setSendbutton] = useState("");
+    const [alert1, setAlert1] = useState("");
+    const [alert2, setAlert2] = useState("");
 
     const location = useLocation();
     useEffect(() => {
@@ -23,12 +25,16 @@ export default function LandingPage() {
             setInput(language.portugues.input)
             setInputdate(language.portugues.inputdate)
             setSendbutton(language.portugues.button)
+            setAlert1(language.portugues.alert)
+            setAlert2(language.portugues.alert2)
         } else {
             setTitle(language.english.title)
             setDescription(language.english.description)
             setInput(language.english.input)
             setInputdate(language.english.inputdate)
             setSendbutton(language.english.button)
+            setAlert1(language.english.alert)
+            setAlert2(language.english.alert2)
         };
 
     }, [location.pathname, title])
@@ -38,11 +44,15 @@ export default function LandingPage() {
 
     let callForMath = (e) => {
         e.preventDefault()
-        if (inputName.current.value.trim() !== "") {
+        
+        if (inputName.current.value.slice(-1) === " ") {
+            alert(alert1)
+            
+        } else if (inputName.current.value.trim() !== ""){
             dom(inputName.current.value)
             data(BirthDate.current.value)
-        } else {
-            alert("empty field")
+        }else{
+            alert(alert2)
         }
         inputName.current.value = ""
         BirthDate.current.value = ""
