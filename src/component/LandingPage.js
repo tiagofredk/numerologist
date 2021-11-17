@@ -8,8 +8,7 @@ import { language } from './language';
 export default function LandingPage() {
     initializeApp(firebaseConfig);
     const navigate = useNavigate();
-<<<<<<< HEAD
-
+    const location = useLocation();
     const [title, setTitle] = useState("");
     const [description, setDescription] = useState("");
     const [input, setInput] = useState("");
@@ -18,35 +17,7 @@ export default function LandingPage() {
     const [alert1, setAlert1] = useState("");
     const [alert2, setAlert2] = useState("");
 
-=======
->>>>>>> input
-    const location = useLocation();
-    const [title, setTitle] = useState("");
-    const [description, setDescription] = useState("");
-    const [input, setInput] = useState("");
-    const [inputdate, setInputdate] = useState("");
-    const [sendbutton, setSendbutton] = useState("");
-
     useEffect(() => {
-<<<<<<< HEAD
-        if (location.pathname === "/br") {
-            setTitle(language.portugues.title)
-            setDescription(language.portugues.description)
-            setInput(language.portugues.input)
-            setInputdate(language.portugues.inputdate)
-            setSendbutton(language.portugues.button)
-            setAlert1(language.portugues.alert)
-            setAlert2(language.portugues.alert2)
-        } else {
-            setTitle(language.english.title)
-            setDescription(language.english.description)
-            setInput(language.english.input)
-            setInputdate(language.english.inputdate)
-            setSendbutton(language.english.button)
-            setAlert1(language.english.alert)
-            setAlert2(language.english.alert2)
-        };
-=======
         const languageDef = location.pathname === "/br" ? language.portugues : language.english;
 
         setTitle(languageDef.title)
@@ -54,7 +25,8 @@ export default function LandingPage() {
         setInput(languageDef.input)
         setInputdate(languageDef.inputdate)
         setSendbutton(languageDef.button)
->>>>>>> input
+        setAlert1(languageDef.alert)
+        setAlert2(languageDef.alert2)
 
     }, [location.pathname, title])
 
