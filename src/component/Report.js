@@ -1,10 +1,14 @@
-import { meaning } from "./meaning_en";
+import { meaning as meaning_en } from "./meaning_en";
+import { meaning_pt } from "./meaning_pt";
 import React, { useEffect } from 'react'
-import { NavLink } from "react-router-dom";
+import { NavLink, useLocation } from "react-router-dom";
 import Logo from "../images/Logo.png"
 
 export default function Report() {
-
+    const location = useLocation();
+    const meaning = location.pathname === "/report/br" ? meaning_pt : meaning_en;
+    console.log(location.pathname)
+    console.log(meaning)
     useEffect(() => {
         localStorage.clear()
     });

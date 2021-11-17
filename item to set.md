@@ -16,7 +16,13 @@ started
 - firebase adds
 - site description
 - logo favicon
-- 
+###### 16 Nov
+- styling
+- Single page landing page
+###### 17
+- space black at end fixed
+- spellcheck
+- One page report
 
 ###### Breakpoints
 ##### To implement
@@ -24,3 +30,4 @@ started
 - Single report page
 - report home link issue
 - FAQ
+- Button
