@@ -8,6 +8,7 @@ import { language } from './language';
 export default function LandingPage() {
     initializeApp(firebaseConfig);
     const navigate = useNavigate();
+<<<<<<< HEAD
 
     const [title, setTitle] = useState("");
     const [description, setDescription] = useState("");
@@ -17,8 +18,17 @@ export default function LandingPage() {
     const [alert1, setAlert1] = useState("");
     const [alert2, setAlert2] = useState("");
 
+=======
+>>>>>>> input
     const location = useLocation();
+    const [title, setTitle] = useState("");
+    const [description, setDescription] = useState("");
+    const [input, setInput] = useState("");
+    const [inputdate, setInputdate] = useState("");
+    const [sendbutton, setSendbutton] = useState("");
+
     useEffect(() => {
+<<<<<<< HEAD
         if (location.pathname === "/br") {
             setTitle(language.portugues.title)
             setDescription(language.portugues.description)
@@ -36,6 +46,15 @@ export default function LandingPage() {
             setAlert1(language.english.alert)
             setAlert2(language.english.alert2)
         };
+=======
+        const languageDef = location.pathname === "/br" ? language.portugues : language.english;
+
+        setTitle(languageDef.title)
+        setDescription(languageDef.description)
+        setInput(languageDef.input)
+        setInputdate(languageDef.inputdate)
+        setSendbutton(languageDef.button)
+>>>>>>> input
 
     }, [location.pathname, title])
 
@@ -126,8 +145,6 @@ export default function LandingPage() {
             localStorage.setItem("destiny", call2);
         }
 
-
-
         if (x.length === 2) {
             let callback = len1(x);
             let callback1 = len2(x);
@@ -136,7 +153,6 @@ export default function LandingPage() {
 
             localStorage.setItem("destiny", call2);
         }
-
 
         if (x.length === 3) {
             let callback = len1(x);
@@ -295,8 +311,6 @@ export default function LandingPage() {
         localStorage.setItem("day", day1);
         localStorage.setItem("origin", year3);
 
-        // window.location.href = "#/report/"
-        
         location.pathname === "/br" ? navigate("/report/br") : navigate("/report/")
     }
 
@@ -365,7 +379,9 @@ export default function LandingPage() {
 
         <div className="landingPageContainer">
             <Header />
+            <div>
             <h1 className="indexh1" id="hi">{title}</h1>
+            </div>
 
             <div className="circles"></div>
 
