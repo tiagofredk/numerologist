@@ -10,26 +10,20 @@ export default function LandingPage() {
     const navigate = useNavigate();
 
     const [title, setTitle] = useState("")
-    const [description, setDescription]=useState("")
-    const [input, setInput]=useState("")
-    const [inputdate, setInputdate]=useState("")
-    const [sendbutton, setSendbutton]=useState("")
+    const [description, setDescription] = useState("")
+    const [input, setInput] = useState("")
+    const [inputdate, setInputdate] = useState("")
+    const [sendbutton, setSendbutton] = useState("")
 
     const location = useLocation();
     useEffect(() => {
-        if (location.pathname === "/br") {
-            setTitle(language.portugues.title)
-            setDescription(language.portugues.description)
-            setInput(language.portugues.input)
-            setInputdate(language.portugues.inputdate)
-            setSendbutton(language.portugues.button)
-        } else {
-            setTitle(language.english.title)
-            setDescription(language.english.description)
-            setInput(language.english.input)
-            setInputdate(language.english.inputdate)
-            setSendbutton(language.english.button)
-        };
+        const languageDef = location.pathname === "/br" ? language.portugues : language.english;
+
+        setTitle(languageDef.title)
+        setDescription(languageDef.description)
+        setInput(languageDef.input)
+        setInputdate(languageDef.inputdate)
+        setSendbutton(languageDef.button)
 
     }, [location.pathname, title])
 
@@ -286,7 +280,7 @@ export default function LandingPage() {
         localStorage.setItem("origin", year3);
 
         // window.location.href = "#/report/"
-        
+
         location.pathname === "/br" ? navigate("/report/br") : navigate("/report/")
     }
 
