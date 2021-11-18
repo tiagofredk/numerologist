@@ -1,9 +1,12 @@
-import React, { useRef, useState, useEffect } from 'react'
+import React, { useRef, useState, useEffect, useCallback } from 'react'
 import Header from './Header'
 import { firebaseConfig } from './util'
 import { initializeApp } from "firebase/app";
 import { useNavigate, useLocation } from 'react-router-dom';
 import { language } from './language';
+import CookieRulesDialog from "./cookies/CookieRulesDialog";
+import CookieConsent from "./cookies/CookieConsent";
+import PropTypes from "prop-types";
 
 function LandingPage() {
     initializeApp(firebaseConfig);
@@ -16,6 +19,16 @@ function LandingPage() {
     const [sendbutton, setSendbutton] = useState("");
     const [alert1, setAlert1] = useState("");
     const [alert2, setAlert2] = useState("");
+
+    const [isCookieRulesDialogOpen, setIsCookieRulesDialogOpen] = useState(false);
+
+    const handleCookieRulesDialogOpen = useCallback(() => {
+        setIsCookieRulesDialogOpen(true);
+    }, [setIsCookieRulesDialogOpen]);
+
+    const handleCookieRulesDialogClose = useCallback(() => {
+        setIsCookieRulesDialogOpen(false);
+    }, [setIsCookieRulesDialogOpen]);
 
     useEffect(() => {
         const languageDef = location.pathname === "/br" ? language.portugues : language.english;
@@ -35,14 +48,14 @@ function LandingPage() {
 
     let callForMath = (e) => {
         e.preventDefault()
-        
+
         if (inputName.current.value.slice(-1) === " ") {
             alert(alert1)
-            
-        } else if (inputName.current.value.trim() !== ""){
+
+        } else if (inputName.current.value.trim() !== "") {
             dom(inputName.current.value)
             data(BirthDate.current.value)
-        }else{
+        } else {
             alert(alert2)
         }
         inputName.current.value = ""
@@ -351,8 +364,17 @@ function LandingPage() {
 
         <div className="landingPageContainer">
             <Header />
+            {!isCookieRulesDialogOpen && (
+                <CookieConsent
+                    handleCookieRulesDialogOpen={handleCookieRulesDialogOpen}
+                />
+            )}
+            <CookieRulesDialog
+                open={isCookieRulesDialogOpen}
+                onClose={handleCookieRulesDialogClose}
+            />
             <div>
-            <h1 className="indexh1" id="hi">{title}</h1>
+                <h1 className="indexh1" id="hi">{title}</h1>
             </div>
 
             <div className="circles"></div>
@@ -384,3 +406,7 @@ function LandingPage() {
 }
 
 export default React.memo(LandingPage);
+
+LandingPage.propTypes = {
+    classes: PropTypes.object.isRequired,
+  };

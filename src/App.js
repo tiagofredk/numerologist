@@ -4,7 +4,10 @@ import LandingPage from './component/LandingPage';
 import Report from './component/Report';
 import Page404 from './component/Page404';
 
+
+
 function App() {
+  
   return (
     <HashRouter >
 
