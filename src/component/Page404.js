@@ -1,7 +1,7 @@
 import React from 'react'
 import { NavLink } from 'react-router-dom'
 
-export default function Page404() {
+function Page404() {
     
     return (
         <div>
@@ -11,3 +11,5 @@ export default function Page404() {
         </div>
     )
 }
+
+export default React.memo(Page404)

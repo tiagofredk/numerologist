@@ -23,6 +23,8 @@ started
 - space black at end fixed
 - spellcheck
 - One page report
+###### 18
+- React.memo implemented
 
 ###### Breakpoints
 ##### To implement

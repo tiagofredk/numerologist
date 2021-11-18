@@ -5,7 +5,7 @@ import { initializeApp } from "firebase/app";
 import { useNavigate, useLocation } from 'react-router-dom';
 import { language } from './language';
 
-export default function LandingPage() {
+function LandingPage() {
     initializeApp(firebaseConfig);
     const navigate = useNavigate();
     const location = useLocation();
@@ -382,3 +382,5 @@ export default function LandingPage() {
         </div>
     )
 }
+
+export default React.memo(LandingPage);

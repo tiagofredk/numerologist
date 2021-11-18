@@ -4,7 +4,7 @@ import React, { useEffect } from 'react'
 import { NavLink, useLocation } from "react-router-dom";
 import Logo from "../images/Logo.png"
 
-export default function Report() {
+function Report() {
     const location = useLocation();
     const meaning = location.pathname === "/report/br" ? meaning_pt : meaning_en;
     console.log(location.pathname)
@@ -117,3 +117,4 @@ export default function Report() {
 
 
 
+export default React.memo(Report);

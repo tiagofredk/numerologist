@@ -3,7 +3,7 @@ import usa from '../images/usa.png'
 import bra from '../images/brazil-48.png'
 import { NavLink, useLocation } from 'react-router-dom'
 
-export default function Header() {
+function Header() {
     
     const location = useLocation();
 
@@ -38,3 +38,5 @@ export default function Header() {
         </div>
     )
 }
+
+export default React.memo (Header);
