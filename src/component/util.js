@@ -25,3 +25,4 @@ export const firebaseConfig = {
 const app = initializeApp(firebaseConfig);
 
 getAnalytics(app);
+

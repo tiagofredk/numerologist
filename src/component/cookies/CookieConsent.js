@@ -1,5 +1,5 @@
 import React, { Fragment, useState, useCallback, useEffect } from "react";
-import PropTypes from "prop-types";
+// import { useLocation } from 'react-router-dom';
 import Cookies from "js-cookie";
 import {
   Snackbar,
@@ -9,6 +9,7 @@ import {
   withStyles,
 } from "@material-ui/core";
 import fetchIpData from "./fetchIpData";
+// import { language } from '../language';
 
 const styles = (theme) => ({
   snackbarContent: {
@@ -51,8 +52,11 @@ const europeanCountryCodes = [
 ];
 
 function CookieConsent(props) {
-  const { classes, handleCookieRulesDialogOpen } = props;
+  const { classes, handleCookieRulesDialogOpen, languageDef} = props;
   const [isVisible, setIsVisible] = useState(false);
+
+  // let location = useLocation();
+  // const languageDef = location.pathname === "/br" ? language.portugues : language.english;
 
   const openOnEuCountry = useCallback(() => {
     fetchIpData
@@ -94,18 +98,18 @@ function CookieConsent(props) {
       open={isVisible}
       message={
         <Typography className="text-white">
-          We use cookies to ensure you get the best experience on our website.{" "}
+          {languageDef.cookie.consent}{" "}
         </Typography>
       }
       action={
         <Fragment>
           <Box mr={1}>
             <Button color="primary" onClick={handleCookieRulesDialogOpen}>
-              More details
+            {languageDef.cookie.consent1}
             </Button>
           </Box>
           <Button color="primary" onClick={onAccept}>
-            Got it!
+          {languageDef.cookie.consent2}
           </Button>
         </Fragment>
       }
@@ -113,8 +117,8 @@ function CookieConsent(props) {
   );
 }
 
-CookieConsent.propTypes = {
-  handleCookieRulesDialogOpen: PropTypes.func.isRequired,
-};
+// CookieConsent.propTypes = {
+//   handleCookieRulesDialogOpen: PropTypes.func.isRequired,
+// };
 
 export default withStyles(styles, { withTheme: true })(CookieConsent);

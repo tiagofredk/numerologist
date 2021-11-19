@@ -1,12 +1,12 @@
-import React, { useRef, useState, useEffect, useCallback } from 'react'
-import Header from './Header'
-import { firebaseConfig } from './util'
+import React, { useRef, useState, useEffect, useCallback, lazy } from 'react';
+import Header from './Header';
+import { firebaseConfig } from './util';
 import { initializeApp } from "firebase/app";
 import { useNavigate, useLocation } from 'react-router-dom';
 import { language } from './language';
-import CookieRulesDialog from "./cookies/CookieRulesDialog";
-import CookieConsent from "./cookies/CookieConsent";
-import PropTypes from "prop-types";
+
+const CookieConsent = lazy(() => import("./cookies/CookieConsent"));
+const CookieRulesDialog = lazy(() => import("./cookies/CookieRulesDialog"));
 
 function LandingPage() {
     initializeApp(firebaseConfig);
@@ -19,6 +19,20 @@ function LandingPage() {
     const [sendbutton, setSendbutton] = useState("");
     const [alert1, setAlert1] = useState("");
     const [alert2, setAlert2] = useState("");
+    const [languagetext, setLanguagetext] = useState("")
+
+    useEffect(() => {
+        const languageDef = location.pathname === "/br" ? language.portugues : language.english;
+        setLanguagetext(languageDef)
+        setTitle(languageDef.title)
+        setDescription(languageDef.description)
+        setInput(languageDef.input)
+        setInputdate(languageDef.inputdate)
+        setSendbutton(languageDef.button)
+        setAlert1(languageDef.alert)
+        setAlert2(languageDef.alert2)
+
+    }, [location.pathname, title])
 
     const [isCookieRulesDialogOpen, setIsCookieRulesDialogOpen] = useState(false);
 
@@ -30,18 +44,6 @@ function LandingPage() {
         setIsCookieRulesDialogOpen(false);
     }, [setIsCookieRulesDialogOpen]);
 
-    useEffect(() => {
-        const languageDef = location.pathname === "/br" ? language.portugues : language.english;
-
-        setTitle(languageDef.title)
-        setDescription(languageDef.description)
-        setInput(languageDef.input)
-        setInputdate(languageDef.inputdate)
-        setSendbutton(languageDef.button)
-        setAlert1(languageDef.alert)
-        setAlert2(languageDef.alert2)
-
-    }, [location.pathname, title])
 
     const inputName = useRef()
     const BirthDate = useRef()
@@ -367,11 +369,13 @@ function LandingPage() {
             {!isCookieRulesDialogOpen && (
                 <CookieConsent
                     handleCookieRulesDialogOpen={handleCookieRulesDialogOpen}
+                    languageDef={languagetext}
                 />
             )}
             <CookieRulesDialog
                 open={isCookieRulesDialogOpen}
                 onClose={handleCookieRulesDialogClose}
+                languageDef={languagetext}
             />
             <div>
                 <h1 className="indexh1" id="hi">{title}</h1>
@@ -406,7 +410,3 @@ function LandingPage() {
 }
 
 export default React.memo(LandingPage);
-
-LandingPage.propTypes = {
-    classes: PropTypes.object.isRequired,
-  };
