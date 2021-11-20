@@ -1,7 +1,6 @@
 import React, {Fragment, Suspense, lazy } from 'react';
 import './App.scss'
 import { HashRouter, Route, Routes } from 'react-router-dom'
-// import LandingPage from './component/LandingPage';
 import Report from './component/Report';
 import Page404 from './component/Page404';
 

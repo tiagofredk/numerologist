@@ -1,15 +1,8 @@
-import PropTypes from "prop-types";
-import {
-  Dialog,
-  DialogTitle,
-  DialogContent,
-  DialogActions,
-  Typography,
-  withStyles
-} from "@material-ui/core";
+import { useLocation } from "react-router-dom";
+import {  Dialog,  DialogTitle,  DialogContent,  DialogActions,  Typography,  withStyles} from "@material-ui/core";
 import ArrowBackIcon from "@material-ui/icons/ArrowBack";
 import ColoredButton from "./ColoredButton";
-
+import { language } from '../language';
 const styles = theme => ({
   dialogActions: {
     justifyContent: "flex-start",
@@ -27,8 +20,10 @@ const styles = theme => ({
 
 function CookieRulesDialog(props) {
   
-  const { classes, onClose, open, theme, languageDef } = props;
+  const { classes, onClose, open, theme } = props;
   
+  const location = useLocation()
+  const languageDef = location.pathname === "/br" ? language.portugues : language.english;
   return (
     <Dialog
       open={open}

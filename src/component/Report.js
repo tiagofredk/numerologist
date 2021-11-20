@@ -1,14 +1,14 @@
 import { meaning as meaning_en } from "./meaning_en";
 import { meaning_pt } from "./meaning_pt";
 import React, { useEffect } from 'react'
-import { NavLink, useLocation } from "react-router-dom";
+import { useLocation, Link } from "react-router-dom";
 import Logo from "../images/Logo.png"
 
 function Report() {
+
     const location = useLocation();
     const meaning = location.pathname === "/report/br" ? meaning_pt : meaning_en;
-    console.log(location.pathname)
-    console.log(meaning)
+
     useEffect(() => {
         localStorage.clear()
     });
@@ -16,7 +16,7 @@ function Report() {
     return (
         <div className="reportPage">
             <header>
-                <NavLink to="/"> <img src={Logo} width="62" alt="62" /> </NavLink>
+                <Link to="/"> <img src={Logo} width="62" alt="62" /></Link>
             </header>
 
             <div className="analise">
@@ -114,7 +114,5 @@ function Report() {
     )
 
 }
-
-
 
 export default React.memo(Report);

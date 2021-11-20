@@ -4,7 +4,7 @@ import bra from '../images/brazil-48.png'
 import { NavLink, useLocation } from 'react-router-dom'
 
 function Header() {
-    
+
     const location = useLocation();
 
     function flagSelector() {
@@ -17,14 +17,16 @@ function Header() {
             return logoUSA;
         };
     }
-    
+
     return (
         <div className="header">
             <nav>
+                
                 <div className="lang-menu">
                     <div className="selected-lang" id="sel-lang">
                         <img src={flagSelector()} width="32" alt="32" />
                     </div>
+
                     <ul>
                         <li>
                             <NavLink to="/br"><img src={bra} width="32" alt="32" />Portugues</NavLink>
@@ -39,4 +41,4 @@ function Header() {
     )
 }
 
-export default React.memo (Header);
+export default React.memo(Header);

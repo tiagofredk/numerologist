@@ -25,6 +25,10 @@ started
 - One page report
 ###### 18
 - React.memo implemented
+- cookies dialog implemented
+###### 19
+- Fix language props
+- 
 
 ###### Breakpoints
 ##### To implement

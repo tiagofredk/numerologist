@@ -1,4 +1,4 @@
-import React, { useRef, useState, useEffect, useCallback, lazy } from 'react';
+import React, { useRef, useState, useEffect, useCallback, lazy} from 'react';
 import Header from './Header';
 import { firebaseConfig } from './util';
 import { initializeApp } from "firebase/app";
@@ -19,11 +19,9 @@ function LandingPage() {
     const [sendbutton, setSendbutton] = useState("");
     const [alert1, setAlert1] = useState("");
     const [alert2, setAlert2] = useState("");
-    const [languagetext, setLanguagetext] = useState("")
-
+        
     useEffect(() => {
         const languageDef = location.pathname === "/br" ? language.portugues : language.english;
-        setLanguagetext(languageDef)
         setTitle(languageDef.title)
         setDescription(languageDef.description)
         setInput(languageDef.input)
@@ -31,9 +29,10 @@ function LandingPage() {
         setSendbutton(languageDef.button)
         setAlert1(languageDef.alert)
         setAlert2(languageDef.alert2)
-
+        
     }, [location.pathname, title])
-
+    
+    
     const [isCookieRulesDialogOpen, setIsCookieRulesDialogOpen] = useState(false);
 
     const handleCookieRulesDialogOpen = useCallback(() => {
@@ -363,19 +362,19 @@ function LandingPage() {
     }
 
     return (
-
+        
         <div className="landingPageContainer">
             <Header />
             {!isCookieRulesDialogOpen && (
                 <CookieConsent
                     handleCookieRulesDialogOpen={handleCookieRulesDialogOpen}
-                    languageDef={languagetext}
+        
                 />
             )}
             <CookieRulesDialog
                 open={isCookieRulesDialogOpen}
                 onClose={handleCookieRulesDialogClose}
-                languageDef={languagetext}
+        
             />
             <div>
                 <h1 className="indexh1" id="hi">{title}</h1>
@@ -408,5 +407,6 @@ function LandingPage() {
         </div>
     )
 }
+
 
 export default React.memo(LandingPage);

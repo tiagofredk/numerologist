@@ -1,7 +1,5 @@
-// import {useLocation} from "react-router-dom";
-
 const fetchIpData = new Promise((resolve, reject) => {
-  // let location = useLocation()
+
   const ajax = new XMLHttpRequest();
   if (window.location.href.includes("localhost")) {
     /**

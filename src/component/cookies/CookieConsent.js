@@ -1,5 +1,5 @@
-import React, { Fragment, useState, useCallback, useEffect } from "react";
-// import { useLocation } from 'react-router-dom';
+import React, { Fragment, useState, useCallback, useEffect} from "react";
+import { useLocation } from "react-router-dom";
 import Cookies from "js-cookie";
 import {
   Snackbar,
@@ -9,7 +9,7 @@ import {
   withStyles,
 } from "@material-ui/core";
 import fetchIpData from "./fetchIpData";
-// import { language } from '../language';
+import { language } from '../language';
 
 const styles = (theme) => ({
   snackbarContent: {
@@ -52,19 +52,19 @@ const europeanCountryCodes = [
 ];
 
 function CookieConsent(props) {
-  const { classes, handleCookieRulesDialogOpen, languageDef} = props;
+  const { classes, handleCookieRulesDialogOpen } = props;
   const [isVisible, setIsVisible] = useState(false);
-
-  // let location = useLocation();
-  // const languageDef = location.pathname === "/br" ? language.portugues : language.english;
-
+  
+  const location = useLocation()
+  const languageDef = location.pathname === "/br" ? language.portugues : language.english;
+    
   const openOnEuCountry = useCallback(() => {
     fetchIpData
-      .then((data) => {
-        if (
-          data &&
-          data.country &&
-          !europeanCountryCodes.includes(data.country)
+    .then((data) => {
+      if (
+        data &&
+        data.country &&
+        !europeanCountryCodes.includes(data.country)
         ) {
           setIsVisible(false);
         } else {
@@ -101,24 +101,21 @@ function CookieConsent(props) {
           {languageDef.cookie.consent}{" "}
         </Typography>
       }
+
       action={
         <Fragment>
           <Box mr={1}>
             <Button color="primary" onClick={handleCookieRulesDialogOpen}>
-            {languageDef.cookie.consent1}
+              {languageDef.cookie.consent1}
             </Button>
           </Box>
           <Button color="primary" onClick={onAccept}>
-          {languageDef.cookie.consent2}
+            {languageDef.cookie.consent2}
           </Button>
         </Fragment>
       }
     />
   );
 }
-
-// CookieConsent.propTypes = {
-//   handleCookieRulesDialogOpen: PropTypes.func.isRequired,
-// };
 
 export default withStyles(styles, { withTheme: true })(CookieConsent);
