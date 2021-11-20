@@ -3,7 +3,7 @@ export var meaning_pt = {
     master: 'Master Number',
 
     origin: {
-        title: 'Destiny',
+        title: 'Destino',
         description: 'Este é o número mais influente em relação às suas motivações pessoais, do que e de quem você gosta em seu ambiente e a (s) carreira (s) pela qual você provavelmente aspiraria.',
         func: 'Month + Day + Year',
         1: 'Este é o caminho do tomador de risco, do empreendedor, do pioneiro totalmente independente.',
@@ -20,7 +20,7 @@ export var meaning_pt = {
     },
 
     day: {
-        title: 'Personality',
+        title: 'Personalidade',
         description: 'Este número descreve os bastidores ou você particular.',
         func: 'Day',
         1: 'Você é dinâmico, obstinado e um líder natural, e seu foco único prepara o terreno para o seu sucesso.',
@@ -57,7 +57,7 @@ export var meaning_pt = {
     },
 
     attitude: {
-        title: 'Attitude',
+        title: 'Atitude',
         description: 'Este número é mais poderoso nos primeiros 30-35 anos de sua vida e representa como e por que você reage às circunstâncias em sua juventude.',
         func: 'Month + Day',
         1: 'Você nasceu com uma vontade forte e natureza independente. Você prefere fazer suas próprias escolhas e é teimoso quando empurrado em uma direção diferente. ',
@@ -74,7 +74,7 @@ export var meaning_pt = {
     },
 
     destiny: {
-        title: 'Character',
+        title: 'Carater',
         description: 'Este número representa principalmente suas qualidades públicas e sociais, mas você também exibiria muitas das mesmas em suas relações pessoais.',
         func: 'Letters',
         1: 'Possuir uma mente original e inovadora, com um foco constante em seus objetivos o qualifica como um líder.',
@@ -91,7 +91,7 @@ export var meaning_pt = {
     },
 
     heart: {
-        title: 'Soul Urge',
+        title: 'Exigencia da alma',
         description: 'Esta influência apresenta uma visão de seu eu intuitivo, seu desejo interior',
         func: 'Vowels',
         1: 'O desejo da sua alma é ser inovador, criativo e levar as massas a um reino superior de consciência e compreensão que engendre compaixão por todos.',
@@ -108,7 +108,7 @@ export var meaning_pt = {
     },
 
     personality: {
-        title: 'Hidden Agenda',
+        title: 'Desejos ocultos',
         description: 'Esta vibração oferece seus desejos inatos (ocultos).',
         func: 'Consonants',
         1: 'Esta agenda incita um desejo inato de ser independente, de liderar, de inovar e de criar conceitos e coisas originais e únicos.',
@@ -125,7 +125,7 @@ export var meaning_pt = {
     },
 
     powernumber: {
-        title: 'Divine Purpose',
+        title: 'Proposito',
         description: 'Esta é a sua vibração numérica de despedida. É o que o seu Ser com Alma escolheu alcançar nos seus últimos anos de vida. ',
         func: 'Destiny + Character',
         1: 'Seu propósito divino é deixar para trás um legado de algo de que você foi pioneiro - um conceito, um produto, uma base.',
@@ -142,7 +142,7 @@ export var meaning_pt = {
     },
 
     vowel: {
-        title: 'First Vowel',
+        title: 'Primeira Vogal',
         description: 'A primeira vogal mostra seus impulsos emocionais, suas atitudes e como você vai responder ou reagir, ou seja, como se espera que você pense e aja.',
         func: 'firstvowel',
         a: "A vogal A, com o valor numérico um, é mental no aspecto, mas também é emocional, pois traz consigo muitos sentimentos. Como a primeira vogal é progressiva, aventureira, independente e original. Tendo espírito pioneiro, vai avançar. Se A for a primeira vogal do nosso primeiro nome, teremos novas idéias, mas preferiríamos que viessem da nossa mente fértil do que de outra, porque gostamos de ser criativos. Estamos felizes em sentiremos diferente. Defenderemos nosso ponto de vista mesmo que o mundo todo se oponha a ele. Como nos recusamos a ser direcionados, aceitaremos conselhos somente quando eles coincidirem com o que já acreditamos ou simplesmente confirmarem nossa própria opinião. contatos, novas oportunidades e novas atividades que envolvam mudanças. Queremos romper com o antigo, ou experimentar tradições e aventuras arriscadas no desconhecido. Se nossa primeira vogal for A, devemos evitar mostrar nos dominantes, teimosos e donos de falso orgulho . Devemos aprender a ser tolerantes, sem isso perderemos nosso individualidade. ",

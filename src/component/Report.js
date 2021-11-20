@@ -8,7 +8,7 @@ function Report() {
 
     const location = useLocation();
     const meaning = location.pathname === "/report/br" ? meaning_pt : meaning_en;
-
+    
     useEffect(() => {
         localStorage.clear()
     });
@@ -32,7 +32,7 @@ function Report() {
                     </div>
 
                     <div className="content">
-                        <p id="destiny">{localStorage.destiny}</p>
+                        <p id="destiny">{meaning.destiny.title}</p>
                         <p id="destinydes">{meaning.destiny.description} </p>
                         <p id="destinyre">{meaning.destiny[localStorage.destiny]} </p>
                     </div>
@@ -46,7 +46,7 @@ function Report() {
                     </div>
 
                     <div className="content">
-                        <p id="personality">{localStorage.personality} </p>
+                        <p id="personality">{meaning.personality.title} </p>
                         <p id="personalitydes">{meaning.personality.description} </p>
                         <p id="personalityre">{meaning.personality[localStorage.personality]} </p>
                     </div>
@@ -60,7 +60,7 @@ function Report() {
                     </div>
 
                     <div className="content">
-                        <p id="heart">{localStorage.heart} </p>
+                        <p id="heart">{meaning.heart.title} </p>
                         <p id="heartdes">{meaning.heart.description} </p>
                         <p id="heartre">{meaning.heart[localStorage.heart]} </p>
                     </div>
@@ -74,7 +74,7 @@ function Report() {
                     </div>
 
                     <div className="content">
-                        <p id="origin">{localStorage.origin} </p>
+                        <p id="origin">{meaning.origin.title} </p>
                         <p id="origindes">{meaning.origin.description} </p>
                         <p id="originre">{meaning.origin[localStorage.origin]} </p>
                     </div>
@@ -87,7 +87,7 @@ function Report() {
                     </div>
 
                     <div className="content">
-                        <p id="day">{localStorage.day} </p>
+                        <p id="day">{meaning.day.title} </p>
                         <p id="daydes">{meaning.day.description} </p>
                         <p id="dayre">{meaning.day[localStorage.day]} </p>
                     </div>
@@ -101,7 +101,7 @@ function Report() {
                     </div>
 
                     <div className="content">
-                        <p id="firstvowel">{localStorage.firstvowel} </p>
+                        <p id="firstvowel">{meaning.vowel.title} </p>
                         <p id="firstvoweldes">{meaning.vowel.description} </p>
                         <p id="firstvowelre">{meaning.vowel[localStorage.firstvowel]} </p>
                     </div>
