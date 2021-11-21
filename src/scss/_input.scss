@@ -11,11 +11,7 @@ $clr-gray400: #767b91;
 $clr-gray500: #4f546c;
 $clr-gray600: #2a324b;
 $clr-gray700: #161d34;
-// $clr-bg: rgb(213, 209, 209);
 $clr-bg: rgb(230, 230, 230);
-
-/*   border radius */
-
 $radius: 0.5rem;
 .form {
     position: relative;
@@ -60,7 +56,6 @@ $radius: 0.5rem;
     display: flex;
     flex-direction: column;
     margin: 5%;
-    // width: 100%;
 }
 
 #inputuser div {
@@ -84,17 +79,8 @@ $radius: 0.5rem;
 .name #name,
 #birthdate {
     border-radius: 7px;
-    // font-size: 1rem;
 }
 
-// .name #name {
-//     width: 300px;
-//     height: 25px;
-// }
-// .name #btn {
-//     width: 100px;
-//     justify-content: center;
-// }
 .form__input:focus+.form__label .form__name,
 .form__input:valid+.form__label .form__name {
     transform: translateY(-100%);

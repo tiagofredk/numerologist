@@ -8,6 +8,9 @@ h1 {
     color: rgb(109, 109, 109);
     margin-top: 10vh;
     z-index: 1;
+    @media screen and (max-width: 597px) {
+        text-align: center;
+    }
 }
 
 .name {
